@@ -6,8 +6,6 @@ const resolvers = require("./schema/resolvers");
 const cors = require("cors");
 
 
-
-
 async function startServer() {
   const app = express();
   app.use(cors())

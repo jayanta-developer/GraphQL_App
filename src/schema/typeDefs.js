@@ -1,7 +1,7 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
- type Geo {
+  type Geo {
     lat: String
     lng: String
   }
@@ -12,7 +12,7 @@ const typeDefs = gql`
     zipcode: String
     geo: Geo
   }
-   type Company {
+  type Company {
     name: String
     catchPhrase: String
     bs: String
@@ -22,11 +22,11 @@ const typeDefs = gql`
     id: ID!
     name: String!
     email: String!
-    username:String
-    address:Address
-    phone:String
-    website:String
-    company:Company
+    username: String
+    address: Address
+    phone: String
+    website: String
+    company: Company
   }
 
   type Query {
@@ -36,7 +36,13 @@ const typeDefs = gql`
 
   type Mutation {
     createUser(name: String!, email: String!): User
-    updateUser(id: ID!, name: String, email: String): User
+    updateUser(
+      id: ID!
+      name: String
+      email: String
+      phone: String
+      website: String
+    ): User
   }
 `;
 

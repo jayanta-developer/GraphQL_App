@@ -20,7 +20,7 @@ const resolvers = {
       return newUser;
     },
 
-    updateUser: (_, { id, name, email }) => {
+    updateUser: (_, { id, name, email, website, phone }) => {
       const index = users.findIndex((user) => String(user.id) === String(id));
       if (index === -1) throw new Error(`User with id ${id} not found`);
 
@@ -28,6 +28,8 @@ const resolvers = {
         ...users[index],
         ...(name && { name }),
         ...(email && { email }),
+        ...(website && { website }),
+        ...(phone && { phone }),
       };
 
       return users[index];
